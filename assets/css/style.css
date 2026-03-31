@@ -488,6 +488,45 @@ main {
 
 .navbar-link.active { color: var(--orange-yellow-crayola); }
 
+.lang-switcher {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px;
+  border: 1px solid var(--jet);
+  border-radius: 12px;
+  background: hsla(240, 1%, 17%, 0.88);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-2);
+  z-index: 10;
+}
+
+.lang-btn {
+  min-width: 50px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  color: var(--light-gray);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-500);
+  line-height: 1;
+  text-align: center;
+  transition: var(--transition-1);
+}
+
+.lang-btn:hover,
+.lang-btn:focus {
+  color: var(--white-2);
+  background: var(--onyx);
+}
+
+.lang-btn.active {
+  color: var(--smoky-black);
+  background: var(--orange-yellow-crayola);
+}
+
 
 
 
@@ -796,7 +835,37 @@ main {
   margin-bottom: 7px;
 }
 
-.timeline-list span {
+.timeline-item-title > span {
+  display: inline;
+  color: var(--white-2);
+}
+
+.timeline-project-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-1);
+}
+
+.timeline-project-link:hover,
+.timeline-project-link:focus {
+  color: var(--orange-yellow-crayola);
+}
+
+.timeline-jump-link {
+  display: inline-block;
+  margin-left: 10px;
+  color: var(--vegas-gold);
+  font-weight: var(--fw-500);
+  text-decoration: none;
+  transition: color var(--transition-1);
+}
+
+.timeline-jump-link:hover,
+.timeline-jump-link:focus {
+  color: var(--orange-yellow-crayola);
+}
+
+.timeline-item > span {
   color: var(--vegas-gold);
   font-weight: var(--fw-400);
   line-height: 1.6;
@@ -828,6 +897,15 @@ main {
   color: var(--light-gray);
   font-weight: var(--fw-300);
   line-height: 1.6;
+}
+
+/* Make paragraph spacing inside list items clearer than line spacing */
+li p + p {
+  margin-top: 12px;
+}
+
+.timeline-item .timeline-text + .timeline-text {
+  margin-top: 14px;
 }
 
 
@@ -1376,6 +1454,11 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .navbar { border-radius: 20px 20px 0 0; }
 
+  .lang-switcher {
+    top: 18px;
+    right: 18px;
+  }
+
   .navbar-list { gap: 20px; }
 
   .navbar-link { --fs-8: 14px; }
@@ -1717,6 +1800,11 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
   .navbar-link { font-weight: var(--fw-500); }
+
+  .lang-switcher {
+    top: 20px;
+    right: 20px;
+  }
 
 
 

@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Songyang Ding</title>
+  <title>Songyang Ding | Personal Homepage</title>
 
   <!--
     - favicon
@@ -48,11 +48,11 @@
         <div class="info-content">
           <h1 class="name" title="Songyang Ding">Songyang Ding</h1>
 
-          <p class="title">Postgraduate  Student</p>
+          <p class="title" data-i18n="profile.role">Postgraduate Student</p>
         </div>
 
         <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
+          <span data-i18n="sidebar.showContacts">Show Contacts</span>
 
           <ion-icon name="chevron-down"></ion-icon>
         </button>
@@ -72,9 +72,9 @@
             </div>
 
             <div class="contact-info">
-              <p class="contact-title">Email</p>
+              <p class="contact-title" data-i18n="sidebar.email">Email</p>
 
-              <a href="mailto:songyangd99@gmail.com" class="contact-link">songyangd99@gmail.com</a>
+              <a href="mailto:eric.ding25@imperial.ac.uk" class="contact-link">eric.ding25@imperial.ac.uk</a>
             </div>
 
           </li>
@@ -86,9 +86,9 @@
             </div>
 
             <div class="contact-info">
-              <p class="contact-title">Phone</p>
+              <p class="contact-title" data-i18n="sidebar.phone">Phone</p>
 
-              <a href="tel:+447565679759" class="contact-link">+44 7565679759</a>
+              <a href="tel:+8617321182191" class="contact-link">+86 17321182191</a>
             </div>
 
           </li>
@@ -100,7 +100,7 @@
             </div>
 
             <div class="contact-info">
-              <p class="contact-title">Birthday</p>
+              <p class="contact-title" data-i18n="sidebar.birthday">Birthday</p>
 
               <time datetime="2003-04-29">April 29, 2003</time>
             </div>
@@ -114,9 +114,9 @@
             </div>
 
             <div class="contact-info">
-              <p class="contact-title">Location</p>
+              <p class="contact-title" data-i18n="sidebar.location">Location</p>
 
-              <address>London, UK</address>
+              <address>London, UK / Shanghai, China</address>
             </div>
 
           </li>
@@ -171,11 +171,11 @@
         <ul class="navbar-list">
 
           <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
+            <button class="navbar-link  active" data-nav-link data-nav-target="about" data-i18n="nav.about">About</button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
+            <button class="navbar-link" data-nav-link data-nav-target="resume" data-i18n="nav.resume">Resume</button>
           </li>
 
           <!-- <li class="navbar-item">
@@ -194,10 +194,6 @@
 
       </nav>
 
-
-
-
-
       <!--
         - #ABOUT
       -->
@@ -205,21 +201,21 @@
       <article class="about  active" data-page="about">
 
         <header>
-          <h2 class="h2 article-title">About me</h2>
+          <h2 class="h2 article-title" data-i18n="about.title">About me</h2>
         </header>
 
         <section class="about-text">
-          <p>
-            Postgraduate student at Imperial College London with experience in computer vision, multimodal learning, and
-            algorithm optimization. Skilled in developing scalable ML solutions and applying research insights to real-world
-            applications.
+          <p data-i18n="about.p1">
+            MSc student in Applied Computational Science and Engineering at Imperial College London, with a strong focus on
+            multimodal learning, vision-language modeling, and AI agent systems. I enjoy turning cutting-edge research ideas
+            into reliable and practical machine learning solutions.
             
           </p>
 
-          <p>
-            I have excellent analytical and interpersonal skills, with a keen interest in emerging technologies. 
-            I am enthusiastic about contributing to innovative AI solutions 
-            and eager to bring my technical skills and creative problem-solving abilities to a dynamic team.
+          <p data-i18n="about.p2">
+            My recent work spans diffusion-based cross-modal reconstruction for NASA HiRISE imagery, tool-use grounding
+            optimization for Qwen models, and interpretable reasoning architectures for VQA. I'm especially interested in
+            robust model alignment, scalable training pipelines, and real-world AI deployment.
           </p>
         </section>
 
@@ -230,7 +226,7 @@
 
         <section class="service">
 
-          <h3 class="h3 service-title">What i'm doing</h3>
+          <h3 class="h3 service-title" data-i18n="about.servicesTitle">What i'm doing</h3>
 
           <ul class="service-list">
 
@@ -241,11 +237,13 @@
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Software Development</h4>
+                <h4 class="h4 service-item-title" data-i18n="service.software.title">Agent Development</h4>
 
-                <p class="service-item-text">
-                  Proficient in developing robust applications using Java and Python. <br>
-                  Experience with Agile methodologies and DevOps workflows.
+                <p class="service-item-text" data-i18n="service.software.desc">
+                  Developed multi-step Deep Research Agents using LangGraph and DeerFlow for automated technical intelligence
+                  synthesis across GitHub, HuggingFace, and ArXiv. <br>
+                  Implemented ReAct and Plan-Execute-Verify workflows with schema-constrained outputs to improve reliability,
+                  throughput, and report quality.
                 </p>
               </div>
 
@@ -258,10 +256,11 @@
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Large Language Model</h4>
+                <h4 class="h4 service-item-title" data-i18n="service.llm.title">Large Language Model</h4>
 
-                <p class="service-item-text">
-                  Extensive experience in parameter-efficient fine-tuning (PEFT) of LLMs using LoRA.
+                <p class="service-item-text" data-i18n="service.llm.desc">
+                  Extensive experience in parameter-efficient fine-tuning (PEFT) using LoRA/QLoRA, and reinforcement learning
+                  optimization with GRPO, DAPO, and GSPO.
                 </p>
               </div>
 
@@ -274,10 +273,11 @@
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Machine Learning</h4>
+                <h4 class="h4 service-item-title" data-i18n="service.ml.title">Diffusion Modeling</h4>
 
-                <p class="service-item-text">
-                  Developed and deployed machine learning models for predictive analytics and decision-making.
+                <p class="service-item-text" data-i18n="service.ml.desc">
+                  Built diffusion image-to-image reconstruction workflows for NASA HiRISE cross-modal tasks, recovering
+                  visible-band imagery from IR inputs under sensor degradation for downstream scientific analysis.
                 </p>
               </div>
 
@@ -290,11 +290,11 @@
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Computer Vision</h4>
+                <h4 class="h4 service-item-title" data-i18n="service.cv.title">Computer Vision</h4>
                 
-                <p class="service-item-text">
-                  Specialized in object detection, image classification, and visual question answering (VQA). <br>
-                  Implemented state-of-the-art architectures like YOLO, CNNs, and multimodal models.
+                <p class="service-item-text" data-i18n="service.cv.desc">
+                  Specialized in object detection, image classification, VQA, and diffusion-based image-to-image reconstruction. <br>
+                  Implemented state-of-the-art architectures such as YOLO, CLIP, MAC, and multimodal generative models.
                 </p>
               </div>
 
@@ -516,7 +516,7 @@
       <article class="resume" data-page="resume">
 
         <header>
-          <h2 class="h2 article-title">Resume</h2>
+          <h2 class="h2 article-title" data-i18n="resume.title">Resume</h2>
         </header>
 
         <section class="timeline">
@@ -526,18 +526,18 @@
               <ion-icon name="book-outline"></ion-icon>
             </div>
 
-            <h3 class="h3">Education</h3>
+            <h3 class="h3" data-i18n="resume.education">Education</h3>
           </div>
 
           <ol class="timeline-list">
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">Imperial College London</h4>
+              <h4 class="h4 timeline-item-title" data-i18n="edu.imperial.title">Imperial College London</h4>
 
-              <span>2025 - Present</span>
+              <span>Sep 2025 — Dec 2026</span>
               
-              <p class="timeline-text">
+              <p class="timeline-text" data-i18n="edu.imperial.desc">
                 MSc in Applied Computational Science and Engineering
               </p>
 
@@ -549,16 +549,20 @@
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">University of Southampton</h4>
+              <h4 class="h4 timeline-item-title" data-i18n="edu.southampton.title">University of Southampton</h4>
 
-              <span>2022 — 2025</span>
+              <span>Sep 2022 — Jun 2025</span>
               
-              <p class="timeline-text">
+              <p class="timeline-text" data-i18n="edu.southampton.desc1">
                 BSc in Computer Science (First Class Honours Received)
               </p>
 
-              <p class="timeline-text">
-                Received Southampton International Merit Scholarship
+              <p class="timeline-text" data-i18n="edu.southampton.desc2">
+                Awards: Southampton International Merit Scholarship, F1 in Schools National Bronze Award
+              </p>
+
+              <p class="timeline-text" data-i18n="edu.southampton.desc3">
+                Relevant modules: Machine Learning, Deep Learning, Computer Vision, Distributed Systems
               </p>
 
             </li>
@@ -567,19 +571,19 @@
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">Clifton College</h4>
+              <h4 class="h4 timeline-item-title" data-i18n="edu.clifton.title">Clifton College</h4>
 
               <span>2017 — 2022</span>
 
-              <p class="timeline-text">
-                Subjects: Mathematics(A*), Further Mathematics(A*), Physics(A*) and Computer Science(A)
+              <p class="timeline-text" data-i18n="edu.clifton.desc1">
+                Subjects: Mathematics(A*), Further Mathematics(A*), Physics(A*) and Computer Science(A*)
               </p>
 
-              <p class="timeline-text">
+              <p class="timeline-text" data-i18n="edu.clifton.desc2">
                 Received Academic Scholarship from  Keasbey Memorial Foundation.
               </p>
 
-              <p class="timeline-text">
+              <p class="timeline-text" data-i18n="edu.clifton.desc3">
                 Invited to the British Mathematical Olympiad Round One and Round Two in 2020.
               </p>
 
@@ -597,42 +601,48 @@
               <ion-icon name="book-outline"></ion-icon>
             </div>
 
-            <h3 class="h3">Work Experience</h3>
+            <h3 class="h3" data-i18n="resume.work">Work Experience</h3>
           </div>
 
           <ol class="timeline-list">
             <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Shanghai Artificial Intelligence Industry Association - Summer Internship</h4>
+              <h4 class="h4 timeline-item-title" data-i18n="work.saia.title">Shanghai Artificial Intelligence Industry Association - Summer Internship</h4>
 
-              <span>July 2025 - September 2025 · Shanghai, China</span>
+              <span>Jul 2025 — Sep 2025 · Shanghai, China</span>
               
-              <p class="timeline-text">
-                Conducted a comprehensive study of Shanghai’s AI ecosystem, covering enterprise distribution, technology trends, policy support, and talent structure. 
-                Authored 50+ industry analysis reports and presented findings at internal meetings, providing data-driven insights for policy-making and strategy development.
+              <p class="timeline-text" data-i18n="work.saia.desc1">
+                Tech stack: DeerFlow, ReAct, Pydantic, FAISS, RAG, OpenAI API.
               </p>
 
-              <p class="timeline-text">
-                Developed an automated report generation system based on the LangChain framework. Integrated APIs from GitHub and Hugging Face to collect project metadata (e.g., release date, technology stack, stars). 
+              <p class="timeline-text" data-i18n="work.saia.desc2">
+                Built a multi-step Deep Research Agent with a ReAct-style tool-calling loop to automatically gather and
+                synthesize open-source/project intelligence from GitHub, HuggingFace, and ArXiv.
+              </p>
+
+              <p class="timeline-text" data-i18n="work.saia.desc3">
+                Introduced a Plan-Execute-Verify architecture with schema-constrained outputs using Pydantic, improving report
+                production efficiency by 5× and reducing manual verification error rate by 40%.
               </p>
 
             </li>
 
             <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">midu techonology - Summer Internship in Algorithm Engineering</h4>
+              <h4 class="h4 timeline-item-title" data-i18n="work.midu.title">Midu Technology - Algorithm Engineering Intern</h4>
 
-              <span>July 2024 - September 2024</span>
+              <span>Jul 2024 — Sep 2024</span>
               
-              <p class="timeline-text">
-                Proficient in Docker for the deployment and maintenance of neural networks in professional server environments.
+              <p class="timeline-text" data-i18n="work.midu.desc1">
+                Tech stack: YOLOv8, RAM, CLIP, PyTorch, OpenCV.
               </p>
 
-              <p class="timeline-text">
-                Developed solid knowledge of transformers and Convolutional Neural Networks (CNNs).
+              <p class="timeline-text" data-i18n="work.midu.desc2">
+                Designed a YOLO + RAM cascade architecture for flag compliance analysis (e.g., stain/damage recognition),
+                combining detection and open-vocabulary semantic classification under limited labeled data.
               </p>
 
-              <p class="timeline-text">
-                Gained hands-on experience on real projects. Fine-tunined existing models, 
-                including YOLO series, BLIP series and ResNet variants.
+              <p class="timeline-text" data-i18n="work.midu.desc3">
+                Improved cross-modal representation consistency through feature alignment and confidence-weighted fusion,
+                achieving a 15% accuracy gain over CLIP baseline.
               </p>
             </li>
 
@@ -660,16 +670,16 @@
 
               
 
-              <h4 class="h4 timeline-item-title">Yuanlong Yato - Summer Internship</h4>
+              <h4 class="h4 timeline-item-title" data-i18n="work.yuanlong.title">Yuanlong Yato - Summer Internship</h4>
 
               <span>July 2023 - September 2023</span>
 
-              <p class="timeline-text">
+              <p class="timeline-text" data-i18n="work.yuanlong.desc1">
                 Experienced working under a high-pressure and time-critical environment.
                 Learnt advertising and marketing in the Metaverse industry.
               </p>
 
-              <p class="timeline-text">
+              <p class="timeline-text" data-i18n="work.yuanlong.desc2">
                 Participated in the research and proposal for the Cartier Metaverse marketing.
               </p>
 
@@ -690,11 +700,11 @@
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">World Artificial Intelligence Conference</h4>
+              <h4 class="h4 timeline-item-title" data-i18n="work.waic.title">World Artificial Intelligence Conference</h4>
 
               <span>June 2021 -July 2021</span>
 
-              <p class="timeline-text">
+              <p class="timeline-text" data-i18n="work.waic.desc1">
                 Led a small group of 5 members that helped international journalists
                  communicate with the conference and answered queries.
                   Developed task management abilities and leadership skills.
@@ -714,39 +724,135 @@
               <ion-icon name="book-outline"></ion-icon>
             </div>
 
-            <h3 class="h3">Project Experience</h3>
+            <h3 class="h3" data-i18n="resume.projects">Project Experience</h3>
           </div>
 
           <ol class="timeline-list">
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">CLEVR Visual Question Answering (VQA) Research Project</h4>
+              <h4 class="h4 timeline-item-title">
+                <span data-i18n="project.hirise.title">HiRISE NASA Mars Remote Sensing Cross-Modal Reconstruction</span>
+                <a class="timeline-jump-link" href="./projects/hirise-mars-reconstruction.html" data-i18n="project.jump">【跳转->】</a>
+              </h4>
 
-              <span>December 2024 - April 2025</span>
+              <span>Apr 2026 — Present</span>
 
-              <p class="timeline-text">
-                This project integrated Deep Thinking with MAC (Memory, Attention, and Composition) to train a VQA model on the synthetic CLEVR dataset. <br>
-                Introduced a novel Lipschitz regularization constraint to limit gradient variation, which significantly improved the training stability. The final model achieved 97.4% accuracy on the CLEVR test set. <br>
-                Leveraging Deep Thinking's dynamic iterative mechanism, allow the model to dynamically adjust model depth during runtime. <br>
+              <p class="timeline-text" data-i18n="project.hirise.desc1">
+                Tech stack: PyTorch, Flow Matching, U-Net, DDPM, HiRISE Dataset.
+              </p>
+
+              <p class="timeline-text" data-i18n="project.hirise.desc2">
+                Trained a diffusion-based image-to-image model for NASA Mars orbital scenarios to reconstruct visible-band images
+                from IR-channel inputs when visible camera signals are degraded, supporting downstream scientific surface analysis.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">
+                <span data-i18n="project.qwen.title">Qwen3.5 REFOCUS Agent</span>
+                <a class="timeline-jump-link" href="./projects/qwen35-refocus-agent.html" data-i18n="project.jump">【跳转->】</a>
+              </h4>
+
+              <span>Mar 2026 — Apr 2026</span>
+
+              <p class="timeline-text" data-i18n="project.qwen.desc1">
+                Tech stack: LlamaFactory, verl, LoRA, Qwen3.5, GRPO/DAPO/GSPO.
+              </p>
+
+              <p class="timeline-text" data-i18n="project.qwen.desc2">
+                Addressed grounding coordinate precision limitations in multimodal tool-calling for Qwen3.5-9B by applying
+                LoRA fine-tuning in LlamaFactory to enforce REFOCUS invocation patterns and bbox output formatting.
+              </p>
+
+              <p class="timeline-text" data-i18n="project.qwen.desc3">
+                Implemented RL optimization with IoU + answer correctness composite rewards in the verl framework, and
+                systematically compared GRPO, DAPO, and GSPO convergence behavior on coordinate quality and task accuracy.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">
+                <span data-i18n="project.clevr.title">CLEVR Visual Question Answering (VQA) Research Project</span>
+                <a class="timeline-jump-link" href="./projects/clevr-vqa-mac-dtl.html" data-i18n="project.jump">【跳转->】</a>
+              </h4>
+
+              <span>Mar 2025 — Jun 2025</span>
+
+              <p class="timeline-text" data-i18n="project.clevr.desc1">
+                Tech stack: Deep Thinking, PyTorch, Cross Attention, VLM, MAC.
+              </p>
+
+              <p class="timeline-text" data-i18n="project.clevr.desc2">
+                Proposed the MAC-DTL hybrid architecture by decoupling and integrating Memory-Attention-Composition (MAC)
+                with Deep Thinking Loop, then systematically evaluated extrapolation and convergence stability.
+              </p>
+
+              <p class="timeline-text" data-i18n="project.clevr.desc3">
+                Achieved 97.4% accuracy on CLEVR test set, and designed a MAC_DTL_Specific variant with step-specific
+                parameters in the Control Unit that kept performance degradation under 0.1% as reasoning depth increased.
               </p>
 
             </li>
 
           </ol>
 
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="trophy-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3" data-i18n="resume.competition">Competition Experience</h3>
+          </div>
+
+          <ol class="timeline-list">
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title" data-i18n="comp.bmo.title">British Mathematical Olympiad (BMO) Round Two</h4>
+
+              <p class="timeline-text" data-i18n="comp.bmo.desc">
+                Competed in UK national-level mathematics competition and advanced to Round Two.
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+
           <br>
           <br>
 
         <section class="skill">
 
-          <h3 class="h3 skills-title">My skills</h3>
+          <h3 class="h3 skills-title" data-i18n="skills.title">My skills</h3>
 
           <ul class="skills-list content-card">
 
             <li class="skills-item">
 
               <div class="title-wrapper">
-                <h5 class="h5">Java</h5>
+                <h5 class="h5" data-i18n="skills.s1">Python / AI Engineering</h5>
+                <data value="95">95%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 95%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5" data-i18n="skills.s2">Multimodal & Computer Vision</h5>
                 <data value="90">90%</data>
               </div>
 
@@ -759,12 +865,12 @@
             <li class="skills-item">
 
               <div class="title-wrapper">
-                <h5 class="h5">Python</h5>
-                <data value="90">90%</data>
+                <h5 class="h5" data-i18n="skills.s3">LLM Fine-tuning / RLHF / Agent Systems</h5>
+                <data value="88">88%</data>
               </div>
 
               <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 90%;"></div>
+                <div class="skill-progress-fill" style="width: 88%;"></div>
               </div>
 
             </li>
@@ -772,25 +878,12 @@
             <li class="skills-item">
 
               <div class="title-wrapper">
-                <h5 class="h5">Multimodal</h5>
-                <data value="80">80%</data>
+                <h5 class="h5" data-i18n="skills.s4">Java / C++ / SQL / Docker / Git / Linux</h5>
+                <data value="85">85%</data>
               </div>
 
               <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">LLM</h5>
-                <data value="70">70%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
+                <div class="skill-progress-fill" style="width: 85%;"></div>
               </div>
 
             </li>
@@ -1280,6 +1373,11 @@
 
       </article>
 
+    </div>
+
+    <div class="lang-switcher" role="group" aria-label="language switcher">
+      <button class="lang-btn active" type="button" data-lang-btn data-lang="en">EN</button>
+      <button class="lang-btn" type="button" data-lang-btn data-lang="zh">中文</button>
     </div>
 
   </main>
