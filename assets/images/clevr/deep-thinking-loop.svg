@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 945 244" role="img" aria-labelledby="title desc">
+  <title id="title">Deep Thinking recurrent inference loop</title>
+  <desc id="desc">An input x is transformed by F into an initial state, repeatedly updated by G, and mapped by H to output y.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="10" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 0 L 10 4 L 0 8 z" fill="#111"/>
+    </marker>
+  </defs>
+
+  <rect width="945" height="244" fill="#fff"/>
+
+  <g fill="none" stroke="#111" stroke-width="2">
+    <path d="M 12 199 L 99 199 L 143 128 L 56 128 Z"/>
+    <rect x="240" y="50" width="99" height="69"/>
+    <rect x="489" y="160" width="99" height="66"/>
+    <rect x="675" y="160" width="99" height="66"/>
+    <path d="M 838 200 L 907 200 L 933 168 L 864 168 Z"/>
+
+    <path d="M 101 126 C 145 88 169 87 239 86" marker-end="url(#arrow)"/>
+    <path d="M 341 92 C 389 96 360 158 416 174 C 438 181 457 182 488 182" marker-end="url(#arrow)"/>
+    <path d="M 588 193 L 674 193" marker-end="url(#arrow)"/>
+    <path d="M 774 193 L 844 193" marker-end="url(#arrow)"/>
+
+    <path d="M 424 112 L 424 170" stroke-dasharray="2 7" marker-end="url(#arrow)"/>
+    <path d="M 424 112 L 613 112 L 613 193" stroke-dasharray="2 7"/>
+    <path d="M 129 207 L 488 207" stroke-dasharray="2 7" marker-end="url(#arrow)"/>
+  </g>
+
+  <g fill="#000" font-family="Georgia, 'Times New Roman', serif" font-size="31">
+    <text x="72" y="165" font-style="italic">x</text>
+    <text x="286" y="96" font-style="italic">F</text>
+    <text x="527" y="202" font-style="italic">G</text>
+    <text x="715" y="202" font-style="italic">H</text>
+    <text x="879" y="198" font-style="italic">y</text>
+  </g>
+
+  <g fill="#000" font-family="Georgia, 'Times New Roman', serif" font-size="27">
+    <text x="350" y="78">&#x03D5;<tspan baseline-shift="super" font-size="19">0</tspan></text>
+    <text x="453" y="167">&#x03D5;<tspan baseline-shift="super" font-size="19">m</tspan></text>
+    <text x="534" y="100">&#x03D5;<tspan baseline-shift="super" font-size="19">(m+1)</tspan></text>
+    <text x="622" y="189">&#x03D5;<tspan baseline-shift="super" font-size="19">M</tspan></text>
+  </g>
+</svg>

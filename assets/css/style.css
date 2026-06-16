@@ -335,6 +335,12 @@ main {
 .avatar-box {
   background: var(--bg-gradient-onyx);
   border-radius: 20px;
+  overflow: hidden;
+}
+
+.avatar-box img {
+  border-radius: inherit;
+  display: block;
 }
 
 .info-content .name {
@@ -444,8 +450,116 @@ main {
   font-size: 18px;
 }
 
+.social-button {
+  cursor: pointer;
+  line-height: 1;
+}
+
 
 .social-item .social-link:hover { color: var(--light-gray); }
+
+.wechat-modal {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: var(--transition-1);
+  z-index: 20;
+}
+
+.wechat-modal.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.wechat-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: hsla(0, 0%, 5%, 0.78);
+  backdrop-filter: blur(4px);
+}
+
+.wechat-modal__card {
+  position: relative;
+  width: min(100%, 340px);
+  padding: 24px;
+  border: 1px solid var(--jet);
+  border-radius: 16px;
+  background: var(--eerie-black-2);
+  box-shadow: var(--shadow-5);
+  transform: translateY(8px) scale(0.98);
+  transition: var(--transition-1);
+  z-index: 1;
+}
+
+.wechat-modal.active .wechat-modal__card {
+  transform: translateY(0) scale(1);
+}
+
+.wechat-modal__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  color: var(--white-2);
+  background: var(--onyx);
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+.wechat-modal__close:hover,
+.wechat-modal__close:focus { opacity: 1; }
+
+.wechat-modal__title {
+  margin-right: 36px;
+  margin-bottom: 8px;
+  text-transform: none;
+}
+
+.wechat-modal__text {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.wechat-modal__qr {
+  display: grid;
+  place-items: center;
+  min-height: 252px;
+  padding: 14px;
+  border: 1px solid var(--jet);
+  border-radius: 12px;
+  background: var(--white-1);
+}
+
+.wechat-modal__qr img {
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.wechat-modal__fallback {
+  display: none;
+  color: var(--eerie-black-1);
+  font-size: var(--fs-6);
+  line-height: 1.5;
+  text-align: center;
+}
+
+.wechat-modal__qr.is-missing img { display: none; }
+
+.wechat-modal__qr.is-missing .wechat-modal__fallback { display: block; }
 
 
 

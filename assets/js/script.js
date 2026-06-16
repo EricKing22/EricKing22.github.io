@@ -9,6 +9,9 @@ const i18n = {
   'sidebar.phone': 'Phone',
   'sidebar.birthday': 'Birthday',
   'sidebar.location': 'Location',
+    'wechat.title': 'Add me on WeChat',
+    'wechat.text': 'Scan the QR code to add my WeChat.',
+    'wechat.fallback': 'QR code image not found yet.',
     'nav.about': 'About',
     'nav.resume': 'Resume',
     'about.title': 'About me',
@@ -143,6 +146,12 @@ const i18n = {
   }
 };
 
+Object.assign(i18n.zh, {
+  'wechat.title': '\u6dfb\u52a0\u6211\u7684\u5fae\u4fe1',
+  'wechat.text': '\u626b\u63cf\u4e8c\u7ef4\u7801\u6dfb\u52a0\u5fae\u4fe1\u597d\u53cb\u3002',
+  'wechat.fallback': '\u5c1a\u672a\u627e\u5230\u5fae\u4fe1\u4e8c\u7ef4\u7801\u56fe\u7247\u3002'
+});
+
 const setLanguage = (lang) => {
   const selectedLang = i18n[lang] ? lang : 'en';
   const dict = i18n[selectedLang];
@@ -177,6 +186,47 @@ const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 
 // sidebar toggle functionality for mobile
 sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
+
+const wechatOpenBtn = document.querySelector("[data-wechat-open]");
+const wechatModal = document.querySelector("[data-wechat-modal]");
+const wechatCloseBtns = document.querySelectorAll("[data-wechat-close]");
+const wechatQr = document.querySelector("[data-wechat-qr]");
+
+const toggleWechatModal = function (forceOpen) {
+  if (!wechatModal) return;
+
+  const shouldOpen = typeof forceOpen === "boolean" ? forceOpen : !wechatModal.classList.contains("active");
+
+  wechatModal.classList.toggle("active", shouldOpen);
+  wechatModal.setAttribute("aria-hidden", String(!shouldOpen));
+};
+
+if (wechatOpenBtn) {
+  wechatOpenBtn.addEventListener("click", function () { toggleWechatModal(true); });
+}
+
+for (let i = 0; i < wechatCloseBtns.length; i++) {
+  wechatCloseBtns[i].addEventListener("click", function () { toggleWechatModal(false); });
+}
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape" && wechatModal && wechatModal.classList.contains("active")) {
+    toggleWechatModal(false);
+  }
+});
+
+if (wechatQr) {
+  const markWechatQrMissing = function () {
+    const qrBox = wechatQr.closest(".wechat-modal__qr");
+    if (qrBox) qrBox.classList.add("is-missing");
+  };
+
+  wechatQr.addEventListener("error", markWechatQrMissing);
+
+  if (wechatQr.complete && wechatQr.naturalWidth === 0) {
+    markWechatQrMissing();
+  }
+}
 
 
 

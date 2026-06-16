@@ -68,6 +68,11 @@
       line-height: 1.8;
     }
 
+    .project-overview-heading {
+      margin-bottom: 12px;
+      text-transform: none;
+    }
+
     .project-actions {
       color: var(--light-gray);
       font-size: var(--fs-6);
@@ -103,6 +108,11 @@
       border-top: 0;
     }
 
+    .project-section.is-results {
+      padding-top: 40px;
+      margin-top: 40px;
+    }
+
     .project-section h2 {
       margin-bottom: 16px;
       text-transform: none;
@@ -129,6 +139,10 @@
       align-items: start;
     }
 
+    .project-layout.is-centered {
+      align-items: center;
+    }
+
     .project-points {
       display: grid;
       gap: 12px;
@@ -138,6 +152,83 @@
     .project-points li {
       padding-left: 14px;
       border-left: 2px solid var(--orange-yellow-crayola);
+    }
+
+    .project-findings-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .project-finding {
+      padding-left: 16px;
+      border-left: 2px solid hsla(45, 100%, 72%, 0.55);
+    }
+
+    .project-finding h3 {
+      margin-bottom: 6px;
+      color: var(--white-2);
+      font-size: var(--fs-6);
+      font-weight: var(--fw-500);
+      line-height: 1.35;
+      text-transform: none;
+    }
+
+    .project-formula {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      align-items: center;
+      margin-top: 6px;
+      padding: clamp(18px, 3vw, 26px);
+      border: 1px solid var(--jet);
+      border-radius: 12px;
+      background:
+        linear-gradient(135deg, hsla(45, 100%, 72%, 0.09), transparent 42%),
+        var(--bg-gradient-jet);
+    }
+
+    .project-formula h3 {
+      margin-bottom: 8px;
+      color: var(--white-2);
+      font-size: var(--fs-5);
+      font-weight: var(--fw-500);
+      text-transform: none;
+    }
+
+    .project-formula p {
+      color: var(--light-gray);
+      font-size: var(--fs-6);
+      font-weight: var(--fw-300);
+      line-height: 1.7;
+    }
+
+    .project-equations {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+    }
+
+    .project-equation {
+      display: block;
+      overflow-x: auto;
+      padding: 12px 14px;
+      border-radius: 8px;
+      background: var(--eerie-black-1);
+      color: var(--orange-yellow-crayola);
+      font-size: var(--fs-6);
+      line-height: 1.7;
+      white-space: nowrap;
+    }
+
+    .project-equation mjx-container {
+      margin: 0 !important;
+      min-width: max-content;
+    }
+
+    .project-formula-note {
+      color: var(--light-gray-70) !important;
+      font-size: var(--fs-7) !important;
     }
 
     .project-figure {
@@ -159,8 +250,21 @@
       margin-top: 10px;
     }
 
+    .project-figure-title {
+      margin-bottom: 10px;
+      color: var(--white-2);
+      font-size: var(--fs-5);
+      font-weight: var(--fw-500);
+      line-height: 1.35;
+      text-transform: none;
+    }
+
     .project-figure.is-lead {
       margin-top: 26px;
+    }
+
+    .project-figure.is-method-figure {
+      margin-top: 38px;
     }
 
     .project-figure.is-compact img {
@@ -192,9 +296,9 @@
     .project-stat strong {
       display: block;
       color: var(--orange-yellow-crayola);
-      font-size: clamp(26px, 4vw, 38px);
+      font-size: var(--fs-5);
       font-weight: var(--fw-600);
-      line-height: 1;
+      line-height: 1.35;
       margin-bottom: 10px;
     }
 
@@ -205,12 +309,39 @@
       margin-top: 22px;
     }
 
-    .project-evidence .project-figure:first-child {
+    .project-evidence > .project-figure:first-child {
       grid-column: 1 / -1;
     }
 
-    .project-evidence .project-figure.is-wide {
+    .project-evidence > .project-figure.is-wide {
       grid-column: 1 / -1;
+    }
+
+    .project-validation-pair {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .project-validation-pair .project-figure {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      padding: 14px;
+      border: 1px solid var(--jet);
+      border-radius: 12px;
+      background: var(--bg-gradient-jet);
+    }
+
+    .project-validation-pair .project-figure img {
+      height: clamp(240px, 28vw, 300px);
+      object-fit: contain;
+      background: var(--white-1);
+    }
+
+    .project-validation-pair .project-figure figcaption {
+      margin-top: 12px;
     }
 
     .project-takeaway {
@@ -238,6 +369,10 @@
         grid-template-columns: minmax(0, 0.95fr) minmax(320px, 1.05fr);
       }
 
+      .project-formula {
+        grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+      }
+
       .project-layout.is-reversed {
         grid-template-columns: minmax(320px, 1.05fr) minmax(0, 0.95fr);
       }
@@ -253,6 +388,11 @@
       .project-figure-grid,
       .project-evidence {
         grid-template-columns: 1fr 1fr;
+      }
+
+      .project-validation-pair {
+        grid-template-columns: 1fr 1fr;
+        align-items: stretch;
       }
     }
 
@@ -276,6 +416,18 @@
       }
     }
   </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 
 <body>
@@ -285,13 +437,15 @@
 
       <header class="project-hero">
         <div>
-          <p class="project-meta" data-i18n="meta">Tech stack: PyTorch / MAC / Deep Thinking Loop / VLM</p>
+          <p class="project-meta" data-i18n="meta">Tech stack: PyTorch / MAC / Cross Attention / Deep Thinking Loop / VLM</p>
           <h1 class="h2 article-title project-title" data-i18n="title">CLEVR Visual Question Answering (MAC-DTL)</h1>
+          <h2 class="h3 project-overview-heading" data-i18n="overview.title">Project Overview</h2>
           <p class="project-summary" data-i18n="overview.body">
             This research project explored whether Deep Thinking style recurrent reasoning can improve extrapolation in
-            visual question answering. The core idea was to combine the modular MAC network with an iteratively applied
-            reasoning loop, creating MAC-DTL for controlled experiments on CLEVR, CLEVR-Human, and a custom CLEVR-Hard
-            question set.
+            visual question answering. Deep Thinking introduces inference-time adaptive computation: simple questions can
+            stop with fewer reasoning steps for efficiency, while harder compositional questions can use additional
+            iterations to improve accuracy. The project combines this idea with the modular MAC network, creating MAC-DTL
+            for controlled experiments on CLEVR, CLEVR-Human, and a custom CLEVR-Hard question set.
           </p>
         </div>
         <p class="project-actions">
@@ -300,7 +454,7 @@
       </header>
 
       <section class="project-section">
-        <h2 class="h3" data-i18n="overview.title">Project Overview</h2>
+        <h2 class="h3" data-i18n="dataset.title">Dataset example</h2>
         <figure class="project-figure is-lead">
           <img src="../assets/images/clevr/clevr-examples.png" alt="Two CLEVR visual question answering examples">
           <figcaption data-i18n="figure.clevr">CLEVR examples used to evaluate compositional reasoning over object color, shape, count, material, and spatial relations.</figcaption>
@@ -308,7 +462,7 @@
       </section>
 
       <section class="project-section">
-        <div class="project-layout">
+        <div class="project-layout is-centered">
           <div class="project-copy">
             <h2 class="h3" data-i18n="approach.title">Technical Approach</h2>
             <p data-i18n="approach.body">
@@ -324,41 +478,67 @@
             </ul>
           </div>
           <figure class="project-figure">
-            <img src="../assets/images/clevr/mac-dtl-architecture.png" alt="Proposed MAC-DTL recurrent architecture">
-            <figcaption data-i18n="figure.macdtl">MAC-DTL formulation: image and question encoders feed a shared recurrent reasoning function before answer prediction.</figcaption>
+            <img src="../assets/images/clevr/deep-thinking-loop.svg" alt="Deep Thinking recurrent inference loop">
+            <figcaption data-i18n="figure.macdtl">Deep Thinking formulation: an initial state is iteratively refined at inference time before the final output is produced.</figcaption>
           </figure>
+          <div class="project-formula">
+            <div>
+              <h3 data-i18n="lipschitz.title">Spectral normalization as Lipschitz constraint</h3>
+              <p data-i18n="lipschitz.body">
+                The Lipschitz constraint is implemented through spectral normalization. By rescaling linear weights with
+                their largest singular value, the recurrent update is kept closer to a non-expansive mapping.
+              </p>
+              <p class="project-formula-note" data-i18n="lipschitz.note">
+                This reduces the chance that additional inference-time reasoning steps amplify small changes in the hidden
+                representation.
+              </p>
+            </div>
+            <div class="project-equations" aria-label="Lipschitz constraint equations">
+              <div class="project-equation">\[ \lVert f(u)-f(v) \rVert_2 \le L\lVert u-v \rVert_2,\quad L \le 1 \]</div>
+              <div class="project-equation">\[ \hat{W} = \frac{W}{\sigma_{\max}(W)} \]</div>
+            </div>
+          </div>
         </div>
-        <figure class="project-figure is-lead">
+        <figure class="project-figure is-lead is-method-figure">
+          <h3 class="project-figure-title" data-i18n="mac.heading">Original MAC baseline</h3>
           <img src="../assets/images/clevr/mac-architecture.png" alt="MAC network architecture with Control, Read, and Write units">
           <figcaption data-i18n="figure.mac">Original MAC pipeline: ResNet101 image encoding, BiLSTM question encoding, and recurrent Control-Read-Write reasoning.</figcaption>
         </figure>
       </section>
 
-      <section class="project-section">
-        <h2 class="h3" data-i18n="results.title">Key Results</h2>
+      <section class="project-section is-results">
+        <h2 class="h3" data-i18n="results.title">Results Evaluation</h2>
         <div class="project-stats">
           <div class="project-stat">
-            <strong>97.6%</strong>
-            <span data-i18n="results.stat1">Reproduced original MAC validation accuracy on CLEVR as the main benchmark.</span>
+            <strong data-i18n="results.kicker1">Research Objective</strong>
+            <span data-i18n="results.stat1">Investigated whether Deep Thinking can be integrated with a VLM-style MAC architecture for visual reasoning, with stability under extended inference as the central research question.</span>
           </div>
           <div class="project-stat">
-            <strong>95.0%</strong>
-            <span data-i18n="results.stat2">4-step MAC-DTL retained competitive CLEVR performance after adding Lipschitz-style constraints.</span>
+            <strong data-i18n="results.kicker2">Stability Mechanism</strong>
+            <span data-i18n="results.stat2">Spectral normalization was used to impose a Lipschitz-style constraint on recurrent MAC layers, reducing unbounded memory updates that otherwise prevent stable iteration.</span>
           </div>
           <div class="project-stat">
-            <strong>70%</strong>
-            <span data-i18n="results.stat3">MAC-DTL matched original MAC on the custom CLEVR-Hard stress-test questions.</span>
+            <strong data-i18n="results.kicker3">Inference-Time Analysis</strong>
+            <span data-i18n="results.stat3">Evaluation focused on convergence behaviour, oscillation, and prediction entropy as reasoning depth increased, rather than treating a single benchmark score as the headline result.</span>
           </div>
         </div>
         <div class="project-evidence">
           <figure class="project-figure">
             <img src="../assets/images/clevr/model-results-table.png" alt="Model comparison table for MAC and MAC-DTL variants">
-            <figcaption data-i18n="figure.table">Summary table comparing original MAC, Deep Thinking variants, step-specific settings, validation accuracy, and entropy.</figcaption>
+            <figcaption data-i18n="figure.table">Summary table comparing original MAC, Deep Thinking variants, step-specific settings, inference stability, and prediction entropy.</figcaption>
           </figure>
-          <figure class="project-figure is-wide">
-            <img src="../assets/images/clevr/validation-performance.png" alt="Validation and CLEVR-Human performance curves across inference-time iterations">
-            <figcaption data-i18n="figure.validation">Inference-time iteration analysis on CLEVR validation and CLEVR-Human, showing stability trade-offs across variants.</figcaption>
-          </figure>
+          <div class="project-validation-pair">
+            <figure class="project-figure">
+              <h3 class="project-figure-title" data-i18n="validation.clevr.title">CLEVR validation</h3>
+              <img src="../assets/images/clevr/validation-clevr.png" alt="CLEVR validation stability across inference-time iterations">
+              <figcaption data-i18n="figure.validation.clevr">Standard CLEVR validation split. Lipschitz-constrained DTL variants stay much more stable across extended inference iterations, while the recall baseline oscillates.</figcaption>
+            </figure>
+            <figure class="project-figure">
+              <h3 class="project-figure-title" data-i18n="validation.human.title">CLEVR-Human transfer</h3>
+              <img src="../assets/images/clevr/validation-human.png" alt="CLEVR-Human stability across inference-time iterations">
+              <figcaption data-i18n="figure.validation.human">CLEVR-Human transfer split. The linguistic shift makes the setting harder overall, but normalized DTL variants retain stable trajectories where recall-style iteration remains unstable.</figcaption>
+            </figure>
+          </div>
         </div>
       </section>
 
@@ -366,23 +546,26 @@
         <div class="project-layout is-reversed">
           <div class="project-copy">
             <h2 class="h3" data-i18n="findings.title">Findings</h2>
-            <p data-i18n="findings.body">
-              MAC-DTL showed that Deep Thinking and MAC are architecturally compatible, especially when spectral normalisation
-              is used to reduce unstable memory updates. The strongest benefit was improved inference-time stability rather
-              than a clear peak-accuracy gain. Extended reasoning also exposed an important limitation: extra iterations can
-              increase uncertainty and overthinking, especially on simpler yes/no reasoning, while counting errors often came
-              from occlusion and object-boundary ambiguity.
-            </p>
+            <div class="project-findings-list">
+              <section class="project-finding">
+                <h3 data-i18n="findings.item1.title">Stability is the central gain</h3>
+                <p data-i18n="findings.item1.body">MAC-DTL showed that Deep Thinking and MAC are architecturally compatible, especially when spectral normalisation is used to reduce unstable memory updates. The strongest benefit was not peak accuracy, but improved stability across extended inference.</p>
+              </section>
+              <section class="project-finding">
+                <h3 data-i18n="findings.item2.title">Distribution shift remains visible</h3>
+                <p data-i18n="findings.item2.body">Lipschitz-constrained variants maintained usable trajectories over a wider range of reasoning steps, but prediction entropy rose beyond the training configuration. CLEVR-Human also showed that phrasing and syntax shift still reduce reliability even after unseen words are filtered.</p>
+              </section>
+              <section class="project-finding">
+                <h3 data-i18n="findings.item3.title">Failure modes are interpretable</h3>
+                <p data-i18n="findings.item3.body">Error analysis found no cross-category mistakes, suggesting the model usually identified the answer type correctly. Remaining counting errors were mostly off-by-one cases from occlusion and object-boundary ambiguity, while extended reasoning shifted more failures toward yes/no judgment.</p>
+              </section>
+            </div>
           </div>
           <figure class="project-figure">
             <img src="../assets/images/clevr/error-analysis.png" alt="MAC-DTL error proportion analysis for baseline and extended reasoning steps">
             <figcaption data-i18n="figure.error">Error analysis indicates counting is difficult at trained depth, while extended iterations increase yes/no judgment errors.</figcaption>
           </figure>
         </div>
-        <figure class="project-figure is-lead is-compact">
-          <img src="../assets/images/clevr/clevr-hard-performance.png" alt="CLEVR-Hard performance comparison across inference-time iterations">
-          <figcaption data-i18n="figure.hard">CLEVR-Hard stress test comparing MAC-DTL variants and the modified recall baseline under longer inference loops.</figcaption>
-        </figure>
       </section>
 
       <section class="project-section project-takeaway">
@@ -409,28 +592,44 @@
         'document.title': 'CLEVR VQA (MAC-DTL) | Songyang Ding',
         back: '\u2190 Back to homepage',
         title: 'CLEVR Visual Question Answering (MAC-DTL)',
-        meta: 'Tech stack: PyTorch / MAC / Deep Thinking Loop / VLM',
+        meta: 'Tech stack: PyTorch / MAC / Cross Attention / Deep Thinking Loop / VLM',
         github: 'EricKing22/mac_deepthinking',
         'overview.title': 'Project Overview',
-        'overview.body': 'This research project explored whether Deep Thinking style recurrent reasoning can improve extrapolation in visual question answering. The core idea was to combine the modular MAC network with an iteratively applied reasoning loop, creating MAC-DTL for controlled experiments on CLEVR, CLEVR-Human, and a custom CLEVR-Hard question set.',
+        'overview.body': 'This research project explored whether Deep Thinking style recurrent reasoning can improve extrapolation in visual question answering. Deep Thinking introduces inference-time adaptive computation: simple questions can stop with fewer reasoning steps for efficiency, while harder compositional questions can use additional iterations to improve accuracy. The project combines this idea with the modular MAC network, creating MAC-DTL for controlled experiments on CLEVR, CLEVR-Human, and a custom CLEVR-Hard question set.',
+        'dataset.title': 'Dataset example',
         'figure.clevr': 'CLEVR examples used to evaluate compositional reasoning over object color, shape, count, material, and spatial relations.',
         'approach.title': 'Technical Approach',
         'approach.body': "The model keeps MAC's Control, Read, and Write reasoning units, but adapts them into a recurrent function that can be reused across inference steps. A frozen ResNet101 image encoder and learnable BiLSTM question encoder provide the visual and language representations, while spectral normalisation is applied to linear layers to encourage 1-Lipschitz-style stability during extended reasoning.",
         'approach.point1': 'Compared original MAC, MAC-DT, MAC-DTL, 4-step and 8-step variants, and a step-specific Control Unit variant.',
         'approach.point2': 'Evaluated both standard accuracy and prediction entropy to measure confidence under longer inference loops.',
         'approach.point3': 'Analysed extrapolation using CLEVR-Human, short-to-long question splits, and manually designed CLEVR-Hard questions.',
+        'lipschitz.title': 'Spectral normalization as Lipschitz constraint',
+        'lipschitz.body': 'The Lipschitz constraint is implemented through spectral normalization. By rescaling linear weights with their largest singular value, the recurrent update is kept closer to a non-expansive mapping.',
+        'lipschitz.note': 'This reduces the chance that additional inference-time reasoning steps amplify small changes in the hidden representation.',
         'figure.mac': 'Original MAC pipeline: ResNet101 image encoding, BiLSTM question encoding, and recurrent Control-Read-Write reasoning.',
-        'figure.macdtl': 'MAC-DTL formulation: image and question encoders feed a shared recurrent reasoning function before answer prediction.',
-        'results.title': 'Key Results',
-        'results.stat1': 'Reproduced original MAC validation accuracy on CLEVR as the main benchmark.',
-        'results.stat2': '4-step MAC-DTL retained competitive CLEVR performance after adding Lipschitz-style constraints.',
-        'results.stat3': 'MAC-DTL matched original MAC on the custom CLEVR-Hard stress-test questions.',
-        'figure.table': 'Summary table comparing original MAC, Deep Thinking variants, step-specific settings, validation accuracy, and entropy.',
-        'figure.validation': 'Inference-time iteration analysis on CLEVR validation and CLEVR-Human, showing stability trade-offs across variants.',
+        'figure.macdtl': 'Deep Thinking formulation: an initial state is iteratively refined at inference time before the final output is produced.',
+        'mac.heading': 'Original MAC baseline',
+        'results.title': 'Results Evaluation',
+        'results.kicker1': 'Research Objective',
+        'results.stat1': 'Investigated whether Deep Thinking can be integrated with a VLM-style MAC architecture for visual reasoning, with stability under extended inference as the central research question.',
+        'results.kicker2': 'Stability Mechanism',
+        'results.stat2': 'Spectral normalization was used to impose a Lipschitz-style constraint on recurrent MAC layers, reducing unbounded memory updates that otherwise prevent stable iteration.',
+        'results.kicker3': 'Inference-Time Analysis',
+        'results.stat3': 'Evaluation focused on convergence behaviour, oscillation, and prediction entropy as reasoning depth increased, rather than treating a single benchmark score as the headline result.',
+        'figure.table': 'Summary table comparing original MAC, Deep Thinking variants, step-specific settings, inference stability, and prediction entropy.',
+        'validation.clevr.title': 'CLEVR validation',
+        'validation.human.title': 'CLEVR-Human transfer',
+        'figure.validation.clevr': 'Standard CLEVR validation split. Lipschitz-constrained DTL variants stay much more stable across extended inference iterations, while the recall baseline oscillates.',
+        'figure.validation.human': 'CLEVR-Human transfer split. The linguistic shift makes the setting harder overall, but normalized DTL variants retain stable trajectories where recall-style iteration remains unstable.',
         'findings.title': 'Findings',
-        'findings.body': 'MAC-DTL showed that Deep Thinking and MAC are architecturally compatible, especially when spectral normalisation is used to reduce unstable memory updates. The strongest benefit was improved inference-time stability rather than a clear peak-accuracy gain. Extended reasoning also exposed an important limitation: extra iterations can increase uncertainty and overthinking, especially on simpler yes/no reasoning, while counting errors often came from occlusion and object-boundary ambiguity.',
+        'findings.body': 'MAC-DTL showed that Deep Thinking and MAC are architecturally compatible, especially when spectral normalisation is used to reduce unstable memory updates. The strongest benefit was improved inference-time stability rather than a clear peak-accuracy gain: Lipschitz-constrained variants maintained high accuracy across a wider range of reasoning steps, but prediction entropy increased once inference moved beyond the training configuration. CLEVR-Human also showed that language distribution shift matters, since unfamiliar phrasing and syntax reduced accuracy even after unseen words were filtered. Error analysis found no cross-category mistakes, suggesting the model usually identified the answer type correctly; remaining counting errors were mostly off-by-one cases caused by occlusion and object-boundary ambiguity. Extended reasoning shifted more failures toward yes/no judgment, revealing the overthinking risk of adding iterations without an adaptive stopping rule.',
+        'findings.item1.title': 'Stability is the central gain',
+        'findings.item1.body': 'MAC-DTL showed that Deep Thinking and MAC are architecturally compatible, especially when spectral normalisation is used to reduce unstable memory updates. The strongest benefit was not peak accuracy, but improved stability across extended inference.',
+        'findings.item2.title': 'Distribution shift remains visible',
+        'findings.item2.body': 'Lipschitz-constrained variants maintained usable trajectories over a wider range of reasoning steps, but prediction entropy rose beyond the training configuration. CLEVR-Human also showed that phrasing and syntax shift still reduce reliability even after unseen words are filtered.',
+        'findings.item3.title': 'Failure modes are interpretable',
+        'findings.item3.body': 'Error analysis found no cross-category mistakes, suggesting the model usually identified the answer type correctly. Remaining counting errors were mostly off-by-one cases from occlusion and object-boundary ambiguity, while extended reasoning shifted more failures toward yes/no judgment.',
         'figure.error': 'Error analysis indicates counting is difficult at trained depth, while extended iterations increase yes/no judgment errors.',
-        'figure.hard': 'CLEVR-Hard stress test comparing MAC-DTL variants and the modified recall baseline under longer inference loops.',
         'takeaway.title': 'Takeaway',
         'takeaway.body': 'The project frames MAC-DTL as a lightweight and interpretable alternative to large end-to-end transformer VQA systems. It balances training efficiency, modular reasoning, and stability analysis, while also showing that extrapolation in VQA needs more careful definitions than simply increasing reasoning depth.'
       },
@@ -438,28 +637,44 @@
         'document.title': 'CLEVR 视觉问答（MAC-DTL）| 丁颂扬',
         back: '\u2190 返回主页',
         title: 'CLEVR 视觉问答研究项目（MAC-DTL）',
-        meta: '技术栈：PyTorch / MAC / Deep Thinking Loop / VLM',
+        meta: '技术栈：PyTorch / MAC / Cross Attention / Deep Thinking Loop / VLM',
         github: 'EricKing22/mac_deepthinking',
         'overview.title': '项目概览',
-        'overview.body': '本研究项目探索 Deep Thinking 风格的循环推理是否能提升视觉问答任务中的外推能力。核心思路是将模块化 MAC 网络与可迭代应用的推理循环结合，构建 MAC-DTL，并在 CLEVR、CLEVR-Human 和自定义 CLEVR-Hard 问题集上进行受控实验。',
+        'overview.body': '本研究项目探索 Deep Thinking 风格的循环推理是否能提升视觉问答任务中的外推能力。Deep Thinking 的核心是推理阶段的自适应计算：简单问题可以用更少推理步数完成，以保证效率；更困难的组合式问题则可以增加迭代次数，从而提升准确度。项目将这一新颖思路与模块化 MAC 网络结合，构建 MAC-DTL，并在 CLEVR、CLEVR-Human 和自定义 CLEVR-Hard 问题集上进行受控实验。',
+        'dataset.title': '数据集示例',
         'figure.clevr': 'CLEVR 示例用于评估模型在颜色、形状、数量、材质和空间关系上的组合式推理能力。',
         'approach.title': '技术方法',
         'approach.body': '模型保留 MAC 的 Control、Read 和 Write 推理单元，但将其改造为可在推理阶段重复调用的循环函数。视觉和语言表示分别来自冻结的 ResNet101 图像编码器与可训练的 BiLSTM 问题编码器，同时对线性层施加 spectral normalisation，以鼓励扩展推理过程中的 1-Lipschitz 风格稳定性。',
         'approach.point1': '比较原始 MAC、MAC-DT、MAC-DTL、4-step 与 8-step 变体，以及带 step-specific Control Unit 的变体。',
         'approach.point2': '同时评估标准准确率与预测熵，用于衡量更长推理循环下的模型置信度。',
         'approach.point3': '使用 CLEVR-Human、短问题到长问题划分，以及手工设计的 CLEVR-Hard 问题分析外推能力。',
+        'lipschitz.title': '用 Spectral Normalization 实现 Lipschitz 约束',
+        'lipschitz.body': 'Lipschitz 约束通过 spectral normalization 实现。它用最大奇异值重新缩放线性层权重，使循环更新函数更接近非扩张映射。',
+        'lipschitz.note': '这样可以降低推理阶段增加 reasoning steps 时，小的隐藏表征扰动被不断放大的风险。',
         'figure.mac': '原始 MAC 流程：ResNet101 图像编码、BiLSTM 问题编码，以及循环式 Control-Read-Write 推理。',
-        'figure.macdtl': 'MAC-DTL 架构：图像与问题编码器输入共享循环推理函数，再进行答案预测。',
-        'results.title': '关键结果',
-        'results.stat1': '复现原始 MAC 在 CLEVR 验证集上的 97.6% 准确率，作为主要 benchmark。',
-        'results.stat2': '加入 Lipschitz 风格约束后，4-step MAC-DTL 仍保持 95.0% 的竞争性 CLEVR 表现。',
-        'results.stat3': '在自定义 CLEVR-Hard 压力测试问题上，MAC-DTL 与原始 MAC 达到相同的 70% 表现。',
-        'figure.table': '结果表比较原始 MAC、Deep Thinking 变体、step-specific 设置、验证准确率与预测熵。',
-        'figure.validation': 'CLEVR validation 与 CLEVR-Human 上的推理步数分析，展示不同变体的稳定性权衡。',
+        'figure.macdtl': 'Deep Thinking 形式化示意：初始状态在推理阶段被反复更新，再生成最终输出。',
+        'mac.heading': '原始 MAC 基线',
+        'results.title': '实验分析',
+        'results.kicker1': '研究目标',
+        'results.stat1': '研究 Deep Thinking 是否能与 VLM 风格的 MAC 架构结合用于视觉推理，并将扩展推理阶段的稳定性作为核心问题。',
+        'results.kicker2': '稳定性机制',
+        'results.stat2': '通过 spectral normalization 对 recurrent MAC 层施加 Lipschitz 风格约束，降低不受控 memory update 对稳定迭代的破坏。',
+        'results.kicker3': '推理时分析',
+        'results.stat3': '评估重点放在 reasoning depth 增加后的收敛行为、震荡现象与 prediction entropy，而不是把单个 benchmark 分数作为核心结果。',
+        'figure.table': '结果表比较原始 MAC、Deep Thinking 变体、step-specific 设置、推理稳定性与 prediction entropy。',
+        'validation.clevr.title': 'CLEVR validation',
+        'validation.human.title': 'CLEVR-Human 迁移测试',
+        'figure.validation.clevr': '标准 CLEVR validation 划分。加入 Lipschitz 约束的 DTL 变体在扩展推理步数下明显更稳定，而 recall baseline 随迭代持续震荡。',
+        'figure.validation.human': 'CLEVR-Human 迁移测试划分。语言分布变化让任务整体更难，但 normalized DTL 仍保持更稳定的轨迹，而 recall 风格迭代仍不稳定。',
         'findings.title': '研究发现',
-        'findings.body': '实验表明 Deep Thinking 与 MAC 在架构上具有较好的兼容性，尤其是在使用 spectral normalisation 降低不稳定 memory 更新时。最明显的收益不是峰值准确率提升，而是推理阶段稳定性改善。扩展推理也暴露了一个重要限制：额外迭代可能增加不确定性与 overthinking，尤其影响较简单的 yes/no 判断；而计数错误通常来自遮挡和物体边界不清。',
+        'findings.body': '实验表明 Deep Thinking 与 MAC 在架构上具有较好的兼容性，尤其是在使用 spectral normalization 降低不稳定 memory 更新时。最明显的收益不是峰值准确率提升，而是推理阶段稳定性改善：加入 Lipschitz 约束的变体能在更宽的推理步数范围内保持较高准确率，但当推理步数超过训练配置后，prediction entropy 会上升，说明模型置信度下降。CLEVR-Human 的结果也表明，性能下降不仅来自视觉推理本身，还受到问题措辞和句法分布变化影响，即使过滤掉未见词后也是如此。错误分析中没有出现跨类别错误，说明模型通常能判断答案类型；剩余 counting 错误多是由遮挡和物体边界不清造成的 off-by-one 错误。扩展推理则会把更多错误转向 yes/no 判断，说明如果没有自适应停止机制，增加迭代仍然存在 overthinking 风险。',
+        'findings.item1.title': '稳定性是核心收益',
+        'findings.item1.body': '实验表明 Deep Thinking 与 MAC 在架构上具有较好的兼容性，尤其是在使用 spectral normalization 降低不稳定 memory 更新时。最明显的收益不是峰值准确率提升，而是扩展推理阶段的稳定性改善。',
+        'findings.item2.title': '分布迁移仍然明显',
+        'findings.item2.body': '加入 Lipschitz 约束的变体能在更宽的推理步数范围内保持可用轨迹，但当推理步数超过训练配置后，prediction entropy 会上升。CLEVR-Human 也表明，问题措辞和句法变化即使在过滤未见词后仍会影响可靠性。',
+        'findings.item3.title': '错误模式具有可解释性',
+        'findings.item3.body': '错误分析中没有出现跨类别错误，说明模型通常能判断答案类型；剩余 counting 错误多是由遮挡和物体边界不清造成的 off-by-one 错误，而扩展推理会把更多错误转向 yes/no 判断。',
         'figure.error': '错误分析显示，在训练步数下计数问题更困难，而扩展迭代会增加 yes/no 判断错误。',
-        'figure.hard': 'CLEVR-Hard 压力测试比较 MAC-DTL 变体与修改后的 recall baseline 在长推理循环下的表现。',
         'takeaway.title': '总结',
         'takeaway.body': '该项目将 MAC-DTL 定位为一种轻量且可解释的视觉推理替代方案，相比端到端大型 Transformer VQA 系统，它更强调训练效率、模块化推理与稳定性分析。同时，实验也说明 VQA 外推能力不能简单等同于增加推理深度，还需要更严谨的问题复杂度定义。'
       }

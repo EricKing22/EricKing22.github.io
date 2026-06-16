@@ -128,9 +128,9 @@
         <ul class="social-list">
 
           <li class="social-item">
-            <a href="#" class="social-link">
+            <button class="social-link social-button" type="button" aria-label="Open WeChat QR code" data-wechat-open>
               <ion-icon name="logo-wechat"></ion-icon>
-            </a>
+            </button>
           </li>
 
           <li class="social-item">
@@ -1380,6 +1380,21 @@
     <div class="lang-switcher" role="group" aria-label="language switcher">
       <button class="lang-btn active" type="button" data-lang-btn data-lang="en">EN</button>
       <button class="lang-btn" type="button" data-lang-btn data-lang="zh">中文</button>
+    </div>
+
+    <div class="wechat-modal" data-wechat-modal aria-hidden="true">
+      <button class="wechat-modal__overlay" type="button" aria-label="Close WeChat QR code" data-wechat-close></button>
+      <section class="wechat-modal__card" role="dialog" aria-modal="true" aria-labelledby="wechat-modal-title">
+        <button class="wechat-modal__close" type="button" aria-label="Close WeChat QR code" data-wechat-close>
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+        <h2 class="h3 wechat-modal__title" id="wechat-modal-title" data-i18n="wechat.title">Add me on WeChat</h2>
+        <p class="wechat-modal__text" data-i18n="wechat.text">Scan the QR code to add my WeChat.</p>
+        <div class="wechat-modal__qr">
+          <img src="./assets/images/wechat-qr.png" alt="WeChat friend QR code" data-wechat-qr>
+          <p class="wechat-modal__fallback" data-i18n="wechat.fallback">QR code image not found yet.</p>
+        </div>
+      </section>
     </div>
 
   </main>
