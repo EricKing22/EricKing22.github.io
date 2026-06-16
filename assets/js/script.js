@@ -197,8 +197,16 @@ const toggleWechatModal = function (forceOpen) {
 
   const shouldOpen = typeof forceOpen === "boolean" ? forceOpen : !wechatModal.classList.contains("active");
 
+  if (shouldOpen) {
+    wechatModal.hidden = false;
+  }
+
   wechatModal.classList.toggle("active", shouldOpen);
   wechatModal.setAttribute("aria-hidden", String(!shouldOpen));
+
+  if (!shouldOpen) {
+    wechatModal.hidden = true;
+  }
 };
 
 if (wechatOpenBtn) {

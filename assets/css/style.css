@@ -471,6 +471,8 @@ main {
   z-index: 20;
 }
 
+.wechat-modal[hidden] { display: none; }
+
 .wechat-modal.active {
   opacity: 1;
   visibility: visible;
