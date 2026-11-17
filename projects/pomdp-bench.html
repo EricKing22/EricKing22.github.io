@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POMDP-Bench | Songyang Ding</title>
+  <link rel="shortcut icon" href="../assets/images/my-avatar.png" type="image/x-icon">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+
+  <main class="study-page">
+
+    <div class="study-topbar">
+      <a class="study-back" href="../index.html" data-i18n="st.back">&larr; Back to homepage</a>
+      <div class="study-lang">
+        <button type="button" data-lang="en" class="active">EN</button>
+        <button type="button" data-lang="zh">中文</button>
+      </div>
+    </div>
+
+    <article class="study-shell active">
+
+      <p class="study-eyebrow" data-i18n="st.eyebrow">Embodied AI · Progress reward models</p>
+
+      <h1 class="study-title" data-i18n="st.title">POMDP-Bench: can progress reward models tell when a step is already over?</h1>
+
+      <p class="study-lede" data-i18n="st.lede">A robot puts the block back where it started, and the frame looks almost identical to the beginning — yet it has already completed a round of manipulation. POMDP-Bench asks whether progress reward models can use interaction history to tell such moments apart.</p>
+
+      <figure class="study-figure">
+        <img src="../assets/images/pomdp-failure-recovery.png" alt="Failure and recovery trajectories in POMDP-Bench">
+        <figcaption data-i18n="st.caption">Progress along one failure-and-recovery trajectory: the curve drops when the attempt fails and climbs again as the robot recovers.</figcaption>
+      </figure>
+
+      <div class="study-stats">
+        <div class="study-stat"><b>53</b><span data-i18n="st.s1">tasks benchmarked across manipulation skills</span></div>
+        <div class="study-stat"><b>2,209</b><span data-i18n="st.s2">annotated trajectories</span></div>
+        <div class="study-stat"><b>0.981</b><span data-i18n="st.s3">FoREST overall Spearman correlation on ten failure-and-recovery trajectories</span></div>
+      </div>
+
+      <section class="study-section">
+        <h2 data-i18n="st.h1">Why the current frame is not enough</h2>
+        <p data-i18n="st.p1">Progress estimation is only partly observable. Two episodes can share a nearly unchanged observation while sitting at different points in the task, so the answer depends on what the agent has already done rather than on what the camera currently shows.</p>
+      </section>
+
+      <section class="study-section">
+        <h2 data-i18n="st.h2">What the benchmark measures</h2>
+        <p data-i18n="st.p2">The benchmark spans 53 tasks and 2,209 trajectories. It probes repeated counting, latent state, subtask ordering, and failure and recovery. Stage-level annotations record when a task advances, stalls, or regresses.</p>
+      </section>
+
+      <section class="study-section">
+        <h2 data-i18n="st.h3">What we found</h2>
+        <p data-i18n="st.p3">An evaluation of seven models found that agreement in the overall trend can still hide missed failures. On ten failure-and-recovery trajectories, FoREST reaches an overall Spearman correlation of 0.981, yet it still struggles to locate where a failure begins.</p>
+      </section>
+
+    </article>
+
+  </main>
+
+  <script>
+    const T = {
+      en: {
+        'st.back': '← Back to homepage',
+        'st.eyebrow': 'Embodied AI · Progress reward models',
+        'st.title': 'POMDP-Bench: can progress reward models tell when a step is already over?',
+        'st.lede': 'A robot puts the block back where it started, and the frame looks almost identical to the beginning — yet it has already completed a round of manipulation. POMDP-Bench asks whether progress reward models can use interaction history to tell such moments apart.',
+        'st.caption': 'Progress along one failure-and-recovery trajectory: the curve drops when the attempt fails and climbs again as the robot recovers.',
+        'st.s1': 'tasks benchmarked across manipulation skills',
+        'st.s2': 'annotated trajectories',
+        'st.s3': 'FoREST overall Spearman correlation on ten failure-and-recovery trajectories',
+        'st.h1': 'Why the current frame is not enough',
+        'st.p1': 'Progress estimation is only partly observable. Two episodes can share a nearly unchanged observation while sitting at different points in the task, so the answer depends on what the agent has already done rather than on what the camera currently shows.',
+        'st.h2': 'What the benchmark measures',
+        'st.p2': 'The benchmark spans 53 tasks and 2,209 trajectories. It probes repeated counting, latent state, subtask ordering, and failure and recovery. Stage-level annotations record when a task advances, stalls, or regresses.',
+        'st.h3': 'What we found',
+        'st.p3': 'An evaluation of seven models found that agreement in the overall trend can still hide missed failures. On ten failure-and-recovery trajectories, FoREST reaches an overall Spearman correlation of 0.981, yet it still struggles to locate where a failure begins.'
+      },
+      zh: {
+        'st.back': '← 返回主页',
+        'st.eyebrow': '具身智能 · 进度奖励模型',
+        'st.title': 'POMDP-Bench：进度奖励模型能否判断一步操作已经完成？',
+        'st.lede': '机器人把积木放回原处后，画面可能与起点几乎相同，但它已经完成了一轮操作。POMDP-Bench 研究进度奖励模型能否利用操作历史分辨这样的时刻。',
+        'st.caption': '一条失败与恢复轨迹上的进度：尝试失败时进度回落，机器人恢复后再次上升。',
+        'st.s1': '项操作任务',
+        'st.s2': '条标注轨迹',
+        'st.s3': '十条失败与恢复轨迹上 FoREST 的总体 Spearman 相关系数',
+        'st.h1': '为什么只看当前画面不够',
+        'st.p1': '进度估计只能部分观测。两条轨迹的画面可能几乎相同，却处在任务的不同阶段，因此答案取决于已经做过什么，而不是摄像头此刻看到什么。',
+        'st.h2': '基准考查什么',
+        'st.p2': '基准涵盖 53 项任务、2,209 条轨迹，分别考查重复计数、隐含状态、子任务顺序以及失败与恢复。逐阶段标注记录任务何时推进、停滞或倒退。',
+        'st.h3': '主要发现',
+        'st.p3': '对七种模型的评测发现，总体趋势吻合仍可能掩盖对失败的漏判。在十条失败与恢复轨迹上，FoREST 的总体 Spearman 相关系数达 0.981，但仍难以定位失败的开始。'
+      }
+    };
+    const KEY = 'homepage-lang';
+    function setLang(l) {
+      if (!T[l]) l = 'en';
+      document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en';
+      document.querySelectorAll('[data-i18n]').forEach(e => { const v = T[l][e.dataset.i18n]; if (v) e.textContent = v; });
+      document.querySelectorAll('.study-lang button').forEach(b => b.classList.toggle('active', b.dataset.lang === l));
+      try { localStorage.setItem(KEY, l); } catch (e) {}
+    }
+    document.querySelectorAll('.study-lang button').forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+    let saved = 'en';
+    try { saved = localStorage.getItem(KEY) || 'en'; } catch (e) {}
+    setLang(saved);
+  </script>
+
+</body>
+
+</html>

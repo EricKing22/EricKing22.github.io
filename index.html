@@ -15,7 +15,7 @@
   <!--
     - custom css link
   -->
-  <link rel="stylesheet" href="./assets/css/style.css?v=wechat-modal-fix">
+  <link rel="stylesheet" href="./assets/css/style.css?v=portrait-square">
 
   <!--
     - google font link
@@ -42,13 +42,13 @@
       <div class="sidebar-info">
 
         <figure class="avatar-box">
-          <img src="./assets/images/image.png" alt="Songyang Ding" width="80">
+          <img src="./assets/images/songyang-ding.jpg" alt="Songyang Ding" width="80">
         </figure>
 
         <div class="info-content">
           <h1 class="name" title="Songyang Ding">Songyang Ding</h1>
 
-          <p class="title" data-i18n="profile.role">Postgraduate Student</p>
+          <p class="title" data-i18n="profile.role">Research Assistant · MINT</p>
         </div>
 
         <button class="info_more-btn" data-sidebar-btn>
@@ -175,7 +175,11 @@
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link data-nav-target="resume" data-i18n="nav.resume">Resume</button>
+            <button class="navbar-link" data-nav-link data-nav-target="projects" data-i18n="nav.projects">Projects</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link data-nav-target="education" data-i18n="nav.education">Education</button>
           </li>
 
           <!-- <li class="navbar-item">
@@ -205,12 +209,7 @@
         </header>
 
         <section class="about-text">
-          <p data-i18n="about.p1">
-            MSc student in Applied Computational Science and Engineering at Imperial College London, with a strong focus on
-            multimodal learning, vision-language modeling, and AI agent systems. I enjoy turning cutting-edge research ideas
-            into reliable and practical machine learning solutions.
-            
-          </p>
+          <p data-i18n="about.p1">I am a research assistant at MINT, Shanghai Jiao Tong University. I graduated from Imperial College London with Distinction in the MSc in Applied Computational Science and Engineering.</p>
 
           <p data-i18n="about.p2">
             My recent work spans diffusion-based cross-modal reconstruction for NASA HiRISE imagery, tool-use grounding
@@ -224,7 +223,32 @@
           - service
         -->
 
-        <section class="service">
+
+<!-- POMDP_ABOUT:START -->
+<section class="pomdp-feature" id="pomdp-bench">
+
+  <h3 class="pomdp-feature__title" data-i18n="pomdp.title">POMDP-Bench: progress rewards read from history, not just the frame</h3>
+
+  <p class="pomdp-feature__body" data-i18n="pomdp.lede">A 53-task, 2,209-trajectory benchmark for progress reward models in robot manipulation. It tests whether a model can use interaction history to recover stage, failure, and recovery from frames that look almost identical to the start.</p>
+
+  <div class="pomdp-feature__grid">
+    <figure class="pomdp-figure">
+      <img src="./assets/images/pomdp-failure-recovery.png" alt="Failure and recovery trajectories in POMDP-Bench" loading="lazy">
+      <figcaption data-i18n="pomdp.caption">Progress along one failure-and-recovery trajectory: the curve drops when the attempt fails and climbs again as the robot recovers.</figcaption>
+    </figure>
+
+    <div>
+      <div class="pomdp-stats">
+        <div class="pomdp-stat"><b>53</b><span data-i18n="pomdp.stat1">tasks</span></div>
+        <div class="pomdp-stat"><b>2,209</b><span data-i18n="pomdp.stat2">trajectories</span></div>
+        <div class="pomdp-stat"><b>0.981</b><span data-i18n="pomdp.stat3">FoREST Spearman correlation on ten failure-and-recovery trajectories</span></div>
+      </div>
+      <a class="pomdp-cta" href="./projects/pomdp-bench.html" data-i18n="pomdp.cta">Read the full study &rarr;</a>
+    </div>
+  </div>
+</section>
+<!-- POMDP_ABOUT:END -->
+<section class="service">
 
           <h3 class="h3 service-title" data-i18n="about.servicesTitle">What I'm doing</h3>
 
@@ -306,6 +330,196 @@
 
         </section>
 
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3" data-i18n="resume.work">Work Experience</h3>
+          </div>
+
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title" data-i18n="work.mint.title">Research Assistant · MINT, Shanghai Jiao Tong University</h4>
+              <span data-i18n="work.mint.current">Current</span>
+              <a class="timeline-jump-link" href="https://mint-sjtu.github.io/" data-i18n="work.mint.link">MINT Lab</a>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title" data-i18n="work.saia.title">Shanghai Artificial Intelligence Industry Association - Summer Internship</h4>
+
+              <span>Jul 2025 — Sep 2025 · Shanghai, China</span>
+              
+              <p class="timeline-text" data-i18n="work.saia.desc1">
+                Tech stack: DeerFlow, ReAct, Pydantic, FAISS, RAG, OpenAI API.
+              </p>
+
+              <p class="timeline-text" data-i18n="work.saia.desc2">
+                Built a multi-step Deep Research Agent with a ReAct-style tool-calling loop to automatically gather and
+                synthesize open-source/project intelligence from GitHub, HuggingFace, and ArXiv.
+              </p>
+
+              <p class="timeline-text" data-i18n="work.saia.desc3">
+                Introduced a Plan-Execute-Verify architecture with schema-constrained outputs using Pydantic, improving report
+                production efficiency by 5× and reducing manual verification error rate by 40%.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title" data-i18n="work.midu.title">Midu Technology - Algorithm Engineering Intern</h4>
+
+              <span>Jul 2024 — Sep 2024</span>
+              
+              <p class="timeline-text" data-i18n="work.midu.desc1">
+                Tech stack: YOLOv8, RAM, CLIP, PyTorch, OpenCV.
+              </p>
+
+              <p class="timeline-text" data-i18n="work.midu.desc2">
+                Designed a YOLO + RAM cascade architecture for flag compliance analysis (e.g., stain/damage recognition),
+                combining detection and open-vocabulary semantic classification under limited labeled data.
+              </p>
+
+              <p class="timeline-text" data-i18n="work.midu.desc3">
+                Improved cross-modal representation consistency through feature alignment and confidence-weighted fusion,
+                achieving a 15% accuracy gain over CLIP baseline.
+              </p>
+            </li>
+
+            <!-- <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title"> Bright Surgery LTD - Student Innovation Porject</h4>
+
+              <span>October 2023 - November 2023</span>
+
+              <p class="timeline-text">
+                Led a 5-person team in market research for Bright Surgery LTD in Hampshire.
+              </p>
+
+              <p class="timeline-text">
+                Successfully implemented marketing, increasing brand awareness and customer engagement.
+              </p>
+
+              <p class="timeline-text">
+                Acquired hands-on experience with client presentations and engagements.
+              </p>
+
+            </li> -->
+
+            <li class="timeline-item">
+
+              
+
+              <h4 class="h4 timeline-item-title" data-i18n="work.yuanlong.title">Yuanlong Yato - Summer Internship</h4>
+
+              <span>July 2023 - September 2023</span>
+
+              <p class="timeline-text" data-i18n="work.yuanlong.desc1">
+                Experienced working under a high-pressure and time-critical environment.
+                Learnt advertising and marketing in the Metaverse industry.
+              </p>
+
+              <p class="timeline-text" data-i18n="work.yuanlong.desc2">
+                Participated in the research and proposal for the Cartier Metaverse marketing.
+              </p>
+
+
+            </li>
+
+            <!-- <li class="timeline-item">
+                
+                <h4 class="h4 timeline-item-title">University of Southampton - Library Plus Volunteer </h4>
+  
+                <span>October 2022 - January 2023</span>
+  
+                <p class="timeline-text">
+                  Provided academic support for young age students in Mathematics and Science.
+                  Developed and maintained positive, impactful relationships with students, facilitating improved learning outcomes.
+                </p>
+            </li> -->
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title" data-i18n="work.waic.title">World Artificial Intelligence Conference</h4>
+
+              <span>June 2021 -July 2021</span>
+
+              <p class="timeline-text" data-i18n="work.waic.desc1">
+                Led a small group of 5 members that helped international journalists
+                 communicate with the conference and answered queries.
+                  Developed task management abilities and leadership skills.
+                exceptur.
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="skill">
+
+          <h3 class="h3 skills-title" data-i18n="skills.title">My skills</h3>
+
+          <ul class="skills-list content-card">
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5" data-i18n="skills.s1">Python / AI Engineering</h5>
+                <data value="95">95%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 95%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5" data-i18n="skills.s2">Multimodal & Computer Vision</h5>
+                <data value="90">90%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 90%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5" data-i18n="skills.s3">LLM Fine-tuning / RLHF / Agent Systems</h5>
+                <data value="88">88%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 88%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5" data-i18n="skills.s4">Java / C++ / SQL / Docker / Git / Linux</h5>
+                <data value="85">85%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 85%;"></div>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </section>
 
         <!--
           - testimonials
@@ -512,224 +726,35 @@
 
 
       <!--
-        - #RESUME
+        - #PROJECTS
       -->
 
-      <article class="resume" data-page="resume">
+      <article class="projects" data-page="projects">
 
         <header>
-          <h2 class="h2 article-title" data-i18n="resume.title">Resume</h2>
+          <h2 class="h2 article-title" data-i18n="resume.projects">Project Experience</h2>
         </header>
 
         <section class="timeline">
 
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3" data-i18n="resume.education">Education</h3>
-          </div>
-
           <ol class="timeline-list">
+<!-- POMDP_RESUME:START -->
+<li class="timeline-item">
 
-            <li class="timeline-item">
+  <h4 class="h4 timeline-item-title">
+    <span data-i18n="project.pomdp.title">POMDP-Bench: Progress Reward Model Benchmark for Robot Manipulation</span>
+    <a class="timeline-jump-link" href="./projects/pomdp-bench.html" data-i18n="project.jump">【跳转->】</a>
+  </h4>
 
-              <h4 class="h4 timeline-item-title" data-i18n="edu.imperial.title">Imperial College London</h4>
+  <span data-i18n="project.pomdp.meta">Research project · benchmark design and model evaluation</span>
 
-              <span>Sep 2025 — Dec 2026</span>
-              
-              <p class="timeline-text" data-i18n="edu.imperial.desc">
-                MSc in Applied Computational Science and Engineering
-              </p>
+  <p class="timeline-text" data-i18n="project.pomdp.desc1">Scope: POMDP framing, stage-level annotation, progress reward models, correlation analysis.</p>
 
-              <p class="timeline-text">
+  <p class="timeline-text" data-i18n="project.pomdp.desc2">Benchmark spanning 53 tasks and 2,209 trajectories, probing repeated counting, latent state, subtask ordering, and failure and recovery; seven models were evaluated, and agreement in overall trend was found to still hide missed failures.</p>
 
-              </p>
+</li>
+<!-- POMDP_RESUME:END -->
 
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title" data-i18n="edu.southampton.title">University of Southampton</h4>
-
-              <span>Sep 2022 — Jun 2025</span>
-              
-              <p class="timeline-text" data-i18n="edu.southampton.desc1">
-                BSc in Computer Science (First Class Honours Received)
-              </p>
-
-              <p class="timeline-text" data-i18n="edu.southampton.desc2">
-                Awards: Southampton International Merit Scholarship, F1 in Schools National Bronze Award
-              </p>
-
-              <p class="timeline-text" data-i18n="edu.southampton.desc3">
-                Relevant modules: Machine Learning, Deep Learning, Computer Vision, Distributed Systems
-              </p>
-
-            </li>
-
-
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title" data-i18n="edu.clifton.title">Clifton College</h4>
-
-              <span>2017 — 2022</span>
-
-              <p class="timeline-text" data-i18n="edu.clifton.desc1">
-                Subjects: Mathematics(A*), Further Mathematics(A*), Physics(A*) and Computer Science(A*)
-              </p>
-
-              <p class="timeline-text" data-i18n="edu.clifton.desc2">
-                Received Academic Scholarship from  Keasbey Memorial Foundation.
-              </p>
-
-              <p class="timeline-text" data-i18n="edu.clifton.desc3">
-                Invited to the British Mathematical Olympiad Round One and Round Two in 2020.
-              </p>
-
-
-            </li>
-
-          </ol>
-
-        </section>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3" data-i18n="resume.work">Work Experience</h3>
-          </div>
-
-          <ol class="timeline-list">
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title" data-i18n="work.saia.title">Shanghai Artificial Intelligence Industry Association - Summer Internship</h4>
-
-              <span>Jul 2025 — Sep 2025 · Shanghai, China</span>
-              
-              <p class="timeline-text" data-i18n="work.saia.desc1">
-                Tech stack: DeerFlow, ReAct, Pydantic, FAISS, RAG, OpenAI API.
-              </p>
-
-              <p class="timeline-text" data-i18n="work.saia.desc2">
-                Built a multi-step Deep Research Agent with a ReAct-style tool-calling loop to automatically gather and
-                synthesize open-source/project intelligence from GitHub, HuggingFace, and ArXiv.
-              </p>
-
-              <p class="timeline-text" data-i18n="work.saia.desc3">
-                Introduced a Plan-Execute-Verify architecture with schema-constrained outputs using Pydantic, improving report
-                production efficiency by 5× and reducing manual verification error rate by 40%.
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title" data-i18n="work.midu.title">Midu Technology - Algorithm Engineering Intern</h4>
-
-              <span>Jul 2024 — Sep 2024</span>
-              
-              <p class="timeline-text" data-i18n="work.midu.desc1">
-                Tech stack: YOLOv8, RAM, CLIP, PyTorch, OpenCV.
-              </p>
-
-              <p class="timeline-text" data-i18n="work.midu.desc2">
-                Designed a YOLO + RAM cascade architecture for flag compliance analysis (e.g., stain/damage recognition),
-                combining detection and open-vocabulary semantic classification under limited labeled data.
-              </p>
-
-              <p class="timeline-text" data-i18n="work.midu.desc3">
-                Improved cross-modal representation consistency through feature alignment and confidence-weighted fusion,
-                achieving a 15% accuracy gain over CLIP baseline.
-              </p>
-            </li>
-
-            <!-- <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title"> Bright Surgery LTD - Student Innovation Porject</h4>
-
-              <span>October 2023 - November 2023</span>
-
-              <p class="timeline-text">
-                Led a 5-person team in market research for Bright Surgery LTD in Hampshire.
-              </p>
-
-              <p class="timeline-text">
-                Successfully implemented marketing, increasing brand awareness and customer engagement.
-              </p>
-
-              <p class="timeline-text">
-                Acquired hands-on experience with client presentations and engagements.
-              </p>
-
-            </li> -->
-
-            <li class="timeline-item">
-
-              
-
-              <h4 class="h4 timeline-item-title" data-i18n="work.yuanlong.title">Yuanlong Yato - Summer Internship</h4>
-
-              <span>July 2023 - September 2023</span>
-
-              <p class="timeline-text" data-i18n="work.yuanlong.desc1">
-                Experienced working under a high-pressure and time-critical environment.
-                Learnt advertising and marketing in the Metaverse industry.
-              </p>
-
-              <p class="timeline-text" data-i18n="work.yuanlong.desc2">
-                Participated in the research and proposal for the Cartier Metaverse marketing.
-              </p>
-
-
-            </li>
-
-            <!-- <li class="timeline-item">
-                
-                <h4 class="h4 timeline-item-title">University of Southampton - Library Plus Volunteer </h4>
-  
-                <span>October 2022 - January 2023</span>
-  
-                <p class="timeline-text">
-                  Provided academic support for young age students in Mathematics and Science.
-                  Developed and maintained positive, impactful relationships with students, facilitating improved learning outcomes.
-                </p>
-            </li> -->
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title" data-i18n="work.waic.title">World Artificial Intelligence Conference</h4>
-
-              <span>June 2021 -July 2021</span>
-
-              <p class="timeline-text" data-i18n="work.waic.desc1">
-                Led a small group of 5 members that helped international journalists
-                 communicate with the conference and answered queries.
-                  Developed task management abilities and leadership skills.
-                exceptur.
-              </p>
-
-            </li>
-
-          </ol>
-
-        </section>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3" data-i18n="resume.projects">Project Experience</h3>
-          </div>
-
-          <ol class="timeline-list">
             <li class="timeline-item">
 
               <h4 class="h4 timeline-item-title">
@@ -804,6 +829,86 @@
 
         </section>
 
+      </article>
+
+
+
+
+      <!--
+        - #EDUCATION
+      -->
+
+      <article class="education" data-page="education">
+
+        <header>
+          <h2 class="h2 article-title" data-i18n="resume.education">Education</h2>
+        </header>
+
+        <section class="timeline">
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title" data-i18n="edu.imperial.title">Imperial College London</h4>
+
+              <span>2025 — 2026</span>
+              
+              <p class="timeline-text" data-i18n="edu.imperial.desc">MSc in Applied Computational Science and Engineering, awarded with Distinction</p>
+
+              <p class="timeline-text">
+
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title" data-i18n="edu.southampton.title">University of Southampton</h4>
+
+              <span>Sep 2022 — Jun 2025</span>
+              
+              <p class="timeline-text" data-i18n="edu.southampton.desc1">
+                BSc in Computer Science (First Class Honours Received)
+              </p>
+
+              <p class="timeline-text" data-i18n="edu.southampton.desc2">
+                Awards: Southampton International Merit Scholarship, F1 in Schools National Bronze Award
+              </p>
+
+              <p class="timeline-text" data-i18n="edu.southampton.desc3">
+                Relevant modules: Machine Learning, Deep Learning, Computer Vision, Distributed Systems
+              </p>
+
+            </li>
+
+
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title" data-i18n="edu.clifton.title">Clifton College</h4>
+
+              <span>2017 — 2022</span>
+
+              <p class="timeline-text" data-i18n="edu.clifton.desc1">
+                Subjects: Mathematics(A*), Further Mathematics(A*), Physics(A*) and Computer Science(A*)
+              </p>
+
+              <p class="timeline-text" data-i18n="edu.clifton.desc2">
+                Received Academic Scholarship from  Keasbey Memorial Foundation.
+              </p>
+
+              <p class="timeline-text" data-i18n="edu.clifton.desc3">
+                Invited to the British Mathematical Olympiad Round One and Round Two in 2020.
+              </p>
+
+
+            </li>
+
+          </ol>
+
+        </section>
+
         <section class="timeline">
 
           <div class="title-wrapper">
@@ -829,70 +934,6 @@
 
         </section>
 
-          <br>
-          <br>
-
-        <section class="skill">
-
-          <h3 class="h3 skills-title" data-i18n="skills.title">My skills</h3>
-
-          <ul class="skills-list content-card">
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5" data-i18n="skills.s1">Python / AI Engineering</h5>
-                <data value="95">95%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 95%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5" data-i18n="skills.s2">Multimodal & Computer Vision</h5>
-                <data value="90">90%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 90%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5" data-i18n="skills.s3">LLM Fine-tuning / RLHF / Agent Systems</h5>
-                <data value="88">88%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 88%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5" data-i18n="skills.s4">Java / C++ / SQL / Docker / Git / Linux</h5>
-                <data value="85">85%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 85%;"></div>
-              </div>
-
-            </li>
-
-          </ul>
-
-        </section>
 
       </article>
 
@@ -1407,7 +1448,7 @@
   <!--
     - custom js link
   -->
-  <script src="./assets/js/script.js?v=wechat-modal-fix"></script>
+  <script src="./assets/js/script.js?v=projects-education-split"></script>
 
   <!--
     - ionicon link

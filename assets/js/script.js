@@ -3,7 +3,7 @@
 const i18n = {
   en: {
     'document.title': 'Songyang Ding | Personal Homepage',
-    'profile.role': 'Postgraduate Student',
+    'profile.role': 'Research Assistant · MINT',
     'sidebar.showContacts': 'Show Contacts',
   'sidebar.email': 'Email',
   'sidebar.phone': 'Phone',
@@ -13,9 +13,10 @@ const i18n = {
     'wechat.text': 'Scan the QR code to add my WeChat.',
     'wechat.fallback': 'QR code image not found yet.',
     'nav.about': 'About',
-    'nav.resume': 'Resume',
+    'nav.projects': 'Projects',
+    'nav.education': 'Education',
     'about.title': 'About me',
-    'about.p1': 'MSc student in Applied Computational Science and Engineering at Imperial College London, with a strong focus on multimodal learning, vision-language modeling, and AI agent systems. I enjoy turning cutting-edge research ideas into reliable and practical machine learning solutions.',
+    'about.p1': 'I am a research assistant at MINT, Shanghai Jiao Tong University. I graduated from Imperial College London with Distinction in the MSc in Applied Computational Science and Engineering.',
     'about.p2': 'My recent work spans diffusion-based cross-modal reconstruction for NASA HiRISE imagery, tool-use grounding optimization for Qwen models, and interpretable reasoning architectures for VQA. I\'m especially interested in robust model alignment, scalable training pipelines, and real-world AI deployment.',
     'about.servicesTitle': "What I'm doing",
   'service.software.title': 'AI Agent Development',
@@ -26,10 +27,9 @@ const i18n = {
   'service.ml.desc': 'Developed diffusion-based image-to-image reconstruction pipelines for NASA HiRISE cross-modal remote sensing tasks. Compared DDPM and FM approaches and analysed different gradient guidance methods. Recovered visible-band imagery from degraded infrared inputs to support downstream scientific analysis and sensor-degradation scenarios.',
     'service.cv.title': 'Computer Vision & Multimodal AI',
     'service.cv.desc': 'Specialized in object detection, image classification, visual question answering, and diffusion-based image reconstruction. Implemented and adapted state-of-the-art architectures including YOLO, CLIP, SigLIP, and multimodal generative models for vision-language and image generation tasks.',
-    'resume.title': 'Resume',
     'resume.education': 'Education',
     'edu.imperial.title': 'Imperial College London',
-    'edu.imperial.desc': 'MSc in Applied Computational Science and Engineering',
+    'edu.imperial.desc': 'MSc in Applied Computational Science and Engineering, awarded with Distinction',
     'edu.southampton.title': 'University of Southampton',
     'edu.southampton.desc1': 'BSc in Computer Science (First Class Honours Received)',
     'edu.southampton.desc2': 'Awards: Southampton International Merit Scholarship, F1 in Schools National Bronze Award',
@@ -39,6 +39,9 @@ const i18n = {
   'edu.clifton.desc2': 'Received Academic Scholarship from Keasbey Memorial Foundation.',
   'edu.clifton.desc3': 'Invited to the British Mathematical Olympiad Round One and Round Two in 2020.',
     'resume.work': 'Work Experience',
+    'work.mint.title': 'Research Assistant · MINT, Shanghai Jiao Tong University',
+    'work.mint.current': 'Current',
+    'work.mint.link': 'MINT Lab',
     'work.saia.title': 'Shanghai Artificial Intelligence Industry Association - Summer Internship',
     'work.saia.desc1': 'Tech stack: DeerFlow, ReAct, Pydantic, FAISS, RAG, OpenAI API.',
     'work.saia.desc2': 'Built a multi-step Deep Research Agent with a ReAct-style tool-calling loop to automatically gather and synthesize open-source/project intelligence from GitHub, HuggingFace, and ArXiv.',
@@ -76,16 +79,17 @@ const i18n = {
   },
   zh: {
     'document.title': '丁颂洋 | 个人主页',
-    'profile.role': '硕士在读',
+    'profile.role': 'MINT 研究助理',
     'sidebar.showContacts': '显示联系方式',
   'sidebar.email': '邮箱',
   'sidebar.phone': '电话',
   'sidebar.birthday': '生日',
   'sidebar.location': '所在地',
     'nav.about': '关于我',
-    'nav.resume': '简历',
+    'nav.projects': '项目',
+    'nav.education': '教育',
     'about.title': '关于我',
-    'about.p1': '帝国理工学院应用计算科学与工程硕士在读，我的研究方向聚焦多模态学习、视觉语言建模与智能体系统。',
+    'about.p1': '我现任上海交通大学 MINT 实验室研究助理，毕业于帝国理工学院应用计算科学与工程硕士项目，获 Distinction。',
     'about.p2': '近期工作涵盖 NASA HiRISE 扩散模型跨模态重建、Qwen 工具调用坐标对齐优化，以及 VQA 可解释推理架构设计。',
     'about.servicesTitle': '我在做什么',
   'service.software.title': 'AI 智能体开发',
@@ -96,10 +100,9 @@ const i18n = {
   'service.ml.desc': '面向 NASA HiRISE 跨模态遥感任务开发基于扩散模型的 image-to-image 重建流程。比较 DDPM 与 FM 方法，并分析不同梯度引导策略。从退化红外输入中恢复可见光波段图像，以支持下游科学分析和传感器退化场景。',
     'service.cv.title': '计算机视觉与多模态 AI',
     'service.cv.desc': '专注目标检测、图像分类、视觉问答与基于扩散模型的图像重建。实现并适配 YOLO、CLIP、SigLIP 等先进架构，以及面向视觉语言和图像生成任务的多模态生成模型。',
-    'resume.title': '简历',
     'resume.education': '教育背景',
     'edu.imperial.title': '帝国理工学院（Imperial College London）',
-    'edu.imperial.desc': '应用计算科学与工程硕士（MSc in Applied Computational Science and Engineering）',
+    'edu.imperial.desc': '应用计算科学与工程硕士，获 Distinction',
     'edu.southampton.title': '南安普顿大学（University of Southampton）',
     'edu.southampton.desc1': '计算机科学学士（一等荣誉）',
     'edu.southampton.desc2': '奖项：优秀国际留学生奖学金、F1 in Schools 全国铜奖',
@@ -108,7 +111,10 @@ const i18n = {
   'edu.clifton.desc1': '主修：数学（A*）、高等数学（A*）、物理（A*）、计算机科学（A*）',
   'edu.clifton.desc2': '获 Keasbey Memorial Foundation 学术奖学金。',
   'edu.clifton.desc3': '于 2020 年受邀参加英国数学奥林匹克 BMO 第一轮与第二轮。',
-    'resume.work': '实习经历',
+    'resume.work': '工作经历',
+    'work.mint.title': '上海交通大学 MINT 实验室 · 研究助理',
+    'work.mint.current': '至今',
+    'work.mint.link': 'MINT 实验室官网',
     'work.saia.title': '上海市人工智能行业协会 - 算法工程实习生',
     'work.saia.desc1': '技术栈：DeerFlow、ReAct、Pydantic、FAISS、RAG、OpenAI API。',
     'work.saia.desc2': '基于 ReAct 工具调用循环构建多步 Deep Research Agent，自动抓取并整合 GitHub、HuggingFace、ArXiv 的项目与论文信息。',
@@ -378,15 +384,14 @@ for (let i = 0; i < navigationLinks.length; i++) {
     const targetPage = this.dataset.navTarget || this.innerHTML.toLowerCase();
 
     for (let i = 0; i < pages.length; i++) {
-      if (targetPage === pages[i].dataset.page) {
-        pages[i].classList.add("active");
-        navigationLinks[i].classList.add("active");
-        window.scrollTo(0, 0);
-      } else {
-        pages[i].classList.remove("active");
-        navigationLinks[i].classList.remove("active");
-      }
+      pages[i].classList.toggle("active", pages[i].dataset.page === targetPage);
     }
+
+    for (let i = 0; i < navigationLinks.length; i++) {
+      navigationLinks[i].classList.toggle("active", navigationLinks[i] === this);
+    }
+
+    window.scrollTo(0, 0);
 
   });
 }
@@ -394,6 +399,36 @@ for (let i = 0; i < navigationLinks.length; i++) {
 const langButtons = document.querySelectorAll('[data-lang-btn]');
 const cachedLang = localStorage.getItem('homepage-lang') || 'en';
 
+
+/* POMDP_I18N:START */
+Object.assign(i18n.en, {
+  'pomdp.title': 'POMDP-Bench: progress rewards read from history, not just the frame',
+  'pomdp.lede': 'A 53-task, 2,209-trajectory benchmark for progress reward models in robot manipulation. It tests whether a model can use interaction history to recover stage, failure, and recovery from frames that look almost identical to the start.',
+  'pomdp.stat1': 'tasks',
+  'pomdp.stat2': 'trajectories',
+  'pomdp.stat3': 'FoREST Spearman correlation on ten failure-and-recovery trajectories',
+  'pomdp.caption': 'Progress along one failure-and-recovery trajectory: the curve drops when the attempt fails and climbs again as the robot recovers.',
+  'pomdp.cta': 'Read the full study →',
+  'project.pomdp.title': 'POMDP-Bench: Progress Reward Model Benchmark for Robot Manipulation',
+  'project.pomdp.meta': 'Research project · benchmark design and model evaluation',
+  'project.pomdp.desc1': 'Scope: POMDP framing, stage-level annotation, progress reward models, correlation analysis.',
+  'project.pomdp.desc2': 'Benchmark spanning 53 tasks and 2,209 trajectories, probing repeated counting, latent state, subtask ordering, and failure and recovery; seven models were evaluated, and agreement in overall trend was found to still hide missed failures.'
+});
+
+Object.assign(i18n.zh, {
+  'pomdp.title': 'POMDP-Bench：从操作历史而不只是画面读取进度',
+  'pomdp.lede': '面向机器人操作进度奖励模型的 53 项任务、2,209 条轨迹基准，考查模型能否利用操作历史，从几乎与起点相同的画面中还原阶段、失败与恢复。',
+  'pomdp.stat1': '项任务',
+  'pomdp.stat2': '条轨迹',
+  'pomdp.stat3': '十条失败与恢复轨迹上 FoREST 的 Spearman 相关系数',
+  'pomdp.caption': '一条失败与恢复轨迹上的进度：尝试失败时进度回落，机器人恢复后再次上升。',
+  'pomdp.cta': '阅读完整研究 →',
+  'project.pomdp.title': 'POMDP-Bench：机器人操作进度奖励模型基准',
+  'project.pomdp.meta': '研究项目 · 基准设计与模型评测',
+  'project.pomdp.desc1': '范围：POMDP 建模、逐阶段标注、进度奖励模型、相关性分析。',
+  'project.pomdp.desc2': '基准涵盖 53 项任务、2,209 条轨迹，分别考查重复计数、隐含状态、子任务顺序以及失败与恢复；对七种模型的评测发现，总体趋势吻合仍可能掩盖对失败的漏判。'
+});
+/* POMDP_I18N:END */
 setLanguage(cachedLang);
 
 langButtons.forEach((btn) => {
